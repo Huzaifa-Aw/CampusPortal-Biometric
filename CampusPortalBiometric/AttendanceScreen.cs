@@ -227,8 +227,9 @@ namespace CampusPortalBiometric
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message,"Error");
             }
         }
 

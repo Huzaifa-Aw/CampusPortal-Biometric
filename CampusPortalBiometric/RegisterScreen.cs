@@ -53,11 +53,21 @@ namespace CampusPortalBiometric
 
         private void RegisterScreen_Load(object sender, EventArgs e)
         {
-            NonRegisteredStudents = studentServices.GetNonRegisteredStudents();
-            NonRegisteredEmployees = employeeServices.GetNonRegisteredEmployees();
-            rbStudents.Checked = true;
-            cbFilter.SelectedIndex = 1;
-            dgStudents.Columns["Fingerprint"].Visible = false;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                NonRegisteredStudents = studentMgmt.GetNonBiometricStudents(_userInfo.token, _userInfo.SchoolID);
+                NonRegisteredEmployees = employeeMgmt.GetNonBiometricStudents(_userInfo.token, _userInfo.SchoolID);
+                rbStudents.Checked = true;
+                cbFilter.SelectedIndex = 1;
+                dgStudents.Columns["Fingerprint"].Visible = false;
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+                this.Close();
+            }
         }
 
         private void rbStudents_CheckedChanged(object sender, EventArgs e)
@@ -238,31 +248,40 @@ namespace CampusPortalBiometric
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            if (rbStudents.Checked)
+            try
             {
-                var student = NonRegisteredStudents.Find(x => x.Id == ID);
-                studentServices.RegisterStudent(student, XMLPrint);
-                studentMgmt.RegisterorUpdateStudentFPrint(ID, XMLPrint, _userInfo.token);
+                Cursor.Current = Cursors.WaitCursor;
+                if (rbStudents.Checked)
+                {
+                    var student = NonRegisteredStudents.Find(x => x.Id == ID);
+                    studentMgmt.RegisterorUpdateStudentFPrint(ID, XMLPrint, _userInfo.token);
+                    studentServices.RegisterStudent(student, XMLPrint);
+                }
+                else
+                {
+                    var employee = NonRegisteredEmployees.Find(x => x.Id == ID);
+                    employeeMgmt.RegisterorUpdateEmployeeFPrint(ID, XMLPrint, _userInfo.token);
+                    employeeServices.RegisterEmployee(employee, XMLPrint);
+                }
+                NonRegisteredStudents = studentMgmt.GetNonBiometricStudents(_userInfo.token, _userInfo.SchoolID);
+                NonRegisteredEmployees = employeeMgmt.GetNonBiometricStudents(_userInfo.token, _userInfo.SchoolID);
+                if (rbStudents.Checked)
+                    UpgradeStudentDataGrid();
+                else
+                    UpgradeEmployeeDataGrid();
+                SendMessage(Action.SendMessage, "Fingerprint Saved successfully for " + SName + ".");
+                SendMessage(Action.SendDialog, "Fingerprint Saved successfully for " + SName + ".");
+                ClearForm();
+                SendMessage(Action.UpdateBtn, "false");
+                _sender.CancelCaptureAndCloseReader(this.OnCaptured);
+                Cursor.Current = Cursors.Default;
             }
-            else
+            catch (Exception ex)
             {
-                var employee = NonRegisteredEmployees.Find(x => x.Id == ID);
-                employeeServices.RegisterEmployee(employee, XMLPrint);
-                employeeMgmt.RegisterorUpdateEmployeeFPrint(ID, XMLPrint, _userInfo.token);
+                _sender.CancelCaptureAndCloseReader(this.OnCaptured);
+                MessageBox.Show(ex.Message,"Error");
+                this.Close();
             }
-            NonRegisteredStudents = studentServices.GetNonRegisteredStudents();
-            NonRegisteredEmployees = employeeServices.GetNonRegisteredEmployees();
-            if (rbStudents.Checked)
-                UpgradeStudentDataGrid();
-            else
-                UpgradeEmployeeDataGrid();
-            SendMessage(Action.SendMessage, "Fingerprint Saved successfully for " + SName + ".");
-            SendMessage(Action.SendDialog, "Fingerprint Saved successfully for " + SName + ".");
-            ClearForm();
-            SendMessage(Action.UpdateBtn, "false");
-            _sender.CancelCaptureAndCloseReader(this.OnCaptured);
-            Cursor.Current = Cursors.Default;
         }
 
         private void tbSearch_TextChanged(object sender, EventArgs e)

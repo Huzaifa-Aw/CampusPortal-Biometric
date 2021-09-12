@@ -48,6 +48,7 @@ namespace CampusPortalBiometric
             this.panel1 = new System.Windows.Forms.Panel();
             this.rbEmployee = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbSchoolName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbFingerprint)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -59,7 +60,7 @@ namespace CampusPortalBiometric
             this.pbFingerprint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbFingerprint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbFingerprint.Enabled = false;
-            this.pbFingerprint.Location = new System.Drawing.Point(18, 16);
+            this.pbFingerprint.Location = new System.Drawing.Point(18, 137);
             this.pbFingerprint.Name = "pbFingerprint";
             this.pbFingerprint.Size = new System.Drawing.Size(268, 347);
             this.pbFingerprint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -71,7 +72,7 @@ namespace CampusPortalBiometric
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(316, 107);
+            this.label1.Location = new System.Drawing.Point(316, 228);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 41);
             this.label1.TabIndex = 1;
@@ -85,7 +86,7 @@ namespace CampusPortalBiometric
             this.tbStudentName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tbStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbStudentName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbStudentName.Location = new System.Drawing.Point(458, 107);
+            this.tbStudentName.Location = new System.Drawing.Point(458, 228);
             this.tbStudentName.Name = "tbStudentName";
             this.tbStudentName.Size = new System.Drawing.Size(350, 41);
             this.tbStudentName.TabIndex = 2;
@@ -96,7 +97,7 @@ namespace CampusPortalBiometric
             this.lblFatherName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFatherName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFatherName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblFatherName.Location = new System.Drawing.Point(316, 158);
+            this.lblFatherName.Location = new System.Drawing.Point(316, 279);
             this.lblFatherName.Name = "lblFatherName";
             this.lblFatherName.Size = new System.Drawing.Size(132, 41);
             this.lblFatherName.TabIndex = 3;
@@ -110,7 +111,7 @@ namespace CampusPortalBiometric
             this.tbFatherName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tbFatherName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFatherName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbFatherName.Location = new System.Drawing.Point(458, 158);
+            this.tbFatherName.Location = new System.Drawing.Point(458, 279);
             this.tbFatherName.Name = "tbFatherName";
             this.tbFatherName.Size = new System.Drawing.Size(350, 41);
             this.tbFatherName.TabIndex = 4;
@@ -121,7 +122,7 @@ namespace CampusPortalBiometric
             this.lblClass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClass.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblClass.Location = new System.Drawing.Point(316, 209);
+            this.lblClass.Location = new System.Drawing.Point(316, 330);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(132, 41);
             this.lblClass.TabIndex = 5;
@@ -135,7 +136,7 @@ namespace CampusPortalBiometric
             this.tbClass.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tbClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbClass.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbClass.Location = new System.Drawing.Point(458, 209);
+            this.tbClass.Location = new System.Drawing.Point(458, 330);
             this.tbClass.Name = "tbClass";
             this.tbClass.Size = new System.Drawing.Size(350, 41);
             this.tbClass.TabIndex = 6;
@@ -147,7 +148,7 @@ namespace CampusPortalBiometric
             this.tbDateTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(152)))), ((int)(((byte)(3)))));
             this.tbDateTime.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tbDateTime.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDateTime.Location = new System.Drawing.Point(18, 376);
+            this.tbDateTime.Location = new System.Drawing.Point(18, 497);
             this.tbDateTime.Name = "tbDateTime";
             this.tbDateTime.Size = new System.Drawing.Size(790, 41);
             this.tbDateTime.TabIndex = 8;
@@ -158,7 +159,7 @@ namespace CampusPortalBiometric
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(316, 267);
+            this.label9.Location = new System.Drawing.Point(316, 388);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(132, 41);
             this.label9.TabIndex = 9;
@@ -171,7 +172,7 @@ namespace CampusPortalBiometric
             this.tbAttendance.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tbAttendance.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tbAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAttendance.Location = new System.Drawing.Point(458, 267);
+            this.tbAttendance.Location = new System.Drawing.Point(458, 388);
             this.tbAttendance.Name = "tbAttendance";
             this.tbAttendance.Size = new System.Drawing.Size(350, 41);
             this.tbAttendance.TabIndex = 10;
@@ -183,7 +184,7 @@ namespace CampusPortalBiometric
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(316, 53);
+            this.label3.Location = new System.Drawing.Point(316, 174);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 41);
             this.label3.TabIndex = 11;
@@ -197,7 +198,7 @@ namespace CampusPortalBiometric
             this.tbStudentID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbStudentID.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbStudentID.Location = new System.Drawing.Point(458, 53);
+            this.tbStudentID.Location = new System.Drawing.Point(458, 174);
             this.tbStudentID.Name = "tbStudentID";
             this.tbStudentID.Size = new System.Drawing.Size(350, 41);
             this.tbStudentID.TabIndex = 12;
@@ -250,7 +251,7 @@ namespace CampusPortalBiometric
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.rbEmployee);
             this.panel1.Controls.Add(this.rbStudent);
-            this.panel1.Location = new System.Drawing.Point(551, 12);
+            this.panel1.Location = new System.Drawing.Point(551, 133);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 38);
             this.panel1.TabIndex = 15;
@@ -274,10 +275,23 @@ namespace CampusPortalBiometric
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Controls.Add(this.rbOut);
             this.panel2.Controls.Add(this.rbIN);
-            this.panel2.Location = new System.Drawing.Point(504, 324);
+            this.panel2.Location = new System.Drawing.Point(504, 445);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(244, 39);
             this.panel2.TabIndex = 16;
+            // 
+            // tbSchoolName
+            // 
+            this.tbSchoolName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSchoolName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.tbSchoolName.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold);
+            this.tbSchoolName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbSchoolName.Location = new System.Drawing.Point(12, 16);
+            this.tbSchoolName.Name = "tbSchoolName";
+            this.tbSchoolName.Size = new System.Drawing.Size(806, 55);
+            this.tbSchoolName.TabIndex = 17;
+            this.tbSchoolName.Text = "ATTENDANCE MARKER";
+            this.tbSchoolName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AttendanceScreen
             // 
@@ -286,7 +300,8 @@ namespace CampusPortalBiometric
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.ClientSize = new System.Drawing.Size(830, 427);
+            this.ClientSize = new System.Drawing.Size(830, 556);
+            this.Controls.Add(this.tbSchoolName);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tbStudentID);
@@ -338,5 +353,6 @@ namespace CampusPortalBiometric
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton rbEmployee;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label tbSchoolName;
     }
 }

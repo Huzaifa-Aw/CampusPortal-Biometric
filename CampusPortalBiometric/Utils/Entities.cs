@@ -16,6 +16,10 @@ namespace CampusPortalBiometric.Utils
             public string SchoolName { get; set; }
             public string token { get; set; }
             public string attendance_id { get; set; }
+            [JsonProperty("logo")]
+            public string SchoolLogo { get; set; }
+            [JsonProperty("user")]
+            public string SchoolID { get; set; }
         }
         public class LoginResponse
         {

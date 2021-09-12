@@ -12,9 +12,9 @@ namespace CampusPortalBiometric.WebServices
 {
     class EmployeeMgmt
     {
-        public List<Employee> GetBiometricStudents(string userToken)
+        public List<Employee> GetBiometricStudents(string userToken,string SchoolID)
         {
-            var client = new RestClient(URLManager.GetBiometricEmployeesServiceURL());
+            var client = new RestClient(URLManager.GetBiometricEmployeesServiceURL(SchoolID));
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);
             request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -23,9 +23,9 @@ namespace CampusPortalBiometric.WebServices
             List<Employee> employees = JsonConvert.DeserializeObject<List<Employee>>(response.Content.ToString());
             return employees;
         }
-        public List<Employee> GetNonBiometricStudents(string userToken)
+        public List<Employee> GetNonBiometricStudents(string userToken, string SchoolID)
         {
-            var client = new RestClient(URLManager.GetNonBiometricEmployeesServiceURL());
+            var client = new RestClient(URLManager.GetNonBiometricEmployeesServiceURL(SchoolID));
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);
             request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -45,6 +45,8 @@ namespace CampusPortalBiometric.WebServices
             request.AddParameter("fingerprint", XMLPrint);
             request.AddParameter("token", userToker);
             IRestResponse response = client.Execute(request);
+            if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                throw new Exception("Fingerprint not Saved.\n Please check internet connectivity and try again!");
         }
         public void MarkAttendance(string Id, string AId, string Token, string type)
         {
@@ -59,7 +61,8 @@ namespace CampusPortalBiometric.WebServices
             request.AddParameter("type", type);
 
             IRestResponse response = client.Execute(request);
-            Console.WriteLine(response.Content);
+            if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                throw new Exception("Attendance not marked.\n Please check internet connectivity and try again!");
         }
     }
 }

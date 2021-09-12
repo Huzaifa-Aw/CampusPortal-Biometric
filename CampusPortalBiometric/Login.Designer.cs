@@ -47,7 +47,7 @@ namespace CampusPortalBiometric
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.BtnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnLogin.Location = new System.Drawing.Point(139, 379);
+            this.BtnLogin.Location = new System.Drawing.Point(98, 403);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(319, 50);
             this.BtnLogin.TabIndex = 2;
@@ -62,8 +62,9 @@ namespace CampusPortalBiometric
             this.tbPassword.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.tbPassword.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbPassword.Location = new System.Drawing.Point(157, 323);
+            this.tbPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.tbPassword.Location = new System.Drawing.Point(116, 347);
+            this.tbPassword.MinimumSize = new System.Drawing.Size(0, 25);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(301, 22);
             this.tbPassword.TabIndex = 1;
@@ -78,8 +79,9 @@ namespace CampusPortalBiometric
             this.tbUserId.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tbUserId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbUserId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.tbUserId.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbUserId.Location = new System.Drawing.Point(157, 254);
+            this.tbUserId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.tbUserId.Location = new System.Drawing.Point(116, 278);
+            this.tbUserId.MinimumSize = new System.Drawing.Size(0, 25);
             this.tbUserId.Name = "tbUserId";
             this.tbUserId.Size = new System.Drawing.Size(301, 22);
             this.tbUserId.TabIndex = 0;
@@ -92,7 +94,7 @@ namespace CampusPortalBiometric
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.pictureBox1.Image = global::CampusPortalBiometric.Properties.Resources.CPlogo;
-            this.pictureBox1.Location = new System.Drawing.Point(177, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(145, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(217, 188);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -103,7 +105,7 @@ namespace CampusPortalBiometric
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(139, 239);
+            this.label1.Location = new System.Drawing.Point(98, 263);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(319, 50);
             this.label1.TabIndex = 6;
@@ -113,7 +115,7 @@ namespace CampusPortalBiometric
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(139, 310);
+            this.label2.Location = new System.Drawing.Point(98, 334);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(319, 50);
             this.label2.TabIndex = 7;
@@ -124,7 +126,7 @@ namespace CampusPortalBiometric
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.ClientSize = new System.Drawing.Size(560, 489);
+            this.ClientSize = new System.Drawing.Size(509, 497);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbUserId);

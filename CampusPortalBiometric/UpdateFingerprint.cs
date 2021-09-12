@@ -157,29 +157,40 @@ namespace CampusPortalBiometric
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            if (rbStudents.Checked)
+            try
             {
-                studentServices.UpdateStudentFPrint(ID, XMLPrint);
-                studentMgmt.RegisterorUpdateStudentFPrint(ID, XMLPrint, _userInfo.token);
+                Cursor.Current = Cursors.WaitCursor;
+                if (rbStudents.Checked)
+                {
+                    studentMgmt.RegisterorUpdateStudentFPrint(ID, XMLPrint, _userInfo.token);
+                    studentServices.UpdateStudentFPrint(ID, XMLPrint);
+                }
+                else
+                {
+                    employeeMgmt.RegisterorUpdateEmployeeFPrint(ID, XMLPrint, _userInfo.token);
+                    employeeServices.UpdateEmployeeFPrint(ID, XMLPrint);
+                }
+                RegisteredStudents = studentServices.GetRegisteredStudents();
+                RegisteredEmployees = employeeServices.GetRegisteredEmployees();
+                if (rbStudents.Checked)
+                    UpgradeStudentDataGrid();
+                else
+                    UpgradeEmployeeDataGrid();
+                SendMessage(Action.SendMessage, "Fingerprint Saved successfully for " + SName + ".");
+                SendMessage(Action.SendDialog, "Fingerprint Saved successfully for " + SName + ".");
+                ClearForm();
+                SendMessage(Action.UpdateBtn, "false");
+                _sender.CancelCaptureAndCloseReader(this.OnCaptured);
+                Cursor.Current = Cursors.Default;
+
+
             }
-            else
+            catch (Exception ex)
             {
-                employeeServices.UpdateEmployeeFPrint(ID, XMLPrint);
-                employeeMgmt.RegisterorUpdateEmployeeFPrint(ID, XMLPrint, _userInfo.token);
+                _sender.CancelCaptureAndCloseReader(this.OnCaptured);
+                MessageBox.Show(ex.Message, "Error");
+                this.Close();  
             }
-            RegisteredStudents = studentServices.GetRegisteredStudents();
-            RegisteredEmployees = employeeServices.GetRegisteredEmployees();
-            if (rbStudents.Checked)
-                UpgradeStudentDataGrid();
-            else
-                UpgradeEmployeeDataGrid();
-            SendMessage(Action.SendMessage, "Fingerprint Saved successfully for " + SName + ".");
-            SendMessage(Action.SendDialog, "Fingerprint Saved successfully for " + SName + ".");
-            ClearForm();
-            SendMessage(Action.UpdateBtn, "false");
-            _sender.CancelCaptureAndCloseReader(this.OnCaptured);
-            Cursor.Current = Cursors.Default;
         }
 
         private void ClearForm()

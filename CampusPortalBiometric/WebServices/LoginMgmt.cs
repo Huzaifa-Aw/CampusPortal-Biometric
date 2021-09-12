@@ -48,7 +48,7 @@ namespace CampusPortalBiometric.WebServices
                 }
                 else
                 {
-                    errorMsg = "Status Code: " + response.StatusCode.ToString(); ;
+                    errorMsg = "Please check your internet connectivity and try again!" ;
                     return false;
                 }
             }

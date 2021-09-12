@@ -22,7 +22,9 @@ namespace CampusPortalBiometric
         private EmployeeMgmt employeeMgmt;
         private SQLStudentServices sqlStudentServices;
         private SQLEmployeeServices sqlEmployeeServices;
-
+        private enum ActionType { 
+        DeleteAll,Delete
+        }
         public MenuScreen()
         {
             InitializeComponent();
@@ -69,17 +71,15 @@ namespace CampusPortalBiometric
         {
             sqlStudentServices.ClearStudents();
             GetRegisteredStudents();
-            GetNonRegisteredStudents();
         }
         private void GetEmployees()
         {
             sqlEmployeeServices.ClearEmployees();
             GetRegisteredEmployees();
-            GetNonRegisteredEmployees();
         }
         private void GetRegisteredStudents()
         {
-            var RegisteredStudents = studentMgmt.GetBiometricStudents(_userinfo.token);
+            var RegisteredStudents = studentMgmt.GetBiometricStudents(_userinfo.token,_userinfo.SchoolID);
             if (RegisteredStudents.Count > 0)
             {
                 sqlStudentServices.SaveRegisteredStudents(RegisteredStudents);
@@ -87,28 +87,13 @@ namespace CampusPortalBiometric
         }
         private void GetRegisteredEmployees()
         {
-            var RegisteredEmployees = employeeMgmt.GetBiometricStudents(_userinfo.token);
+            var RegisteredEmployees = employeeMgmt.GetBiometricStudents(_userinfo.token, _userinfo.SchoolID);
             if (RegisteredEmployees.Count > 0)
             {
                 sqlEmployeeServices.SaveRegisteredEmployees(RegisteredEmployees);
             }
         }
-        private void GetNonRegisteredStudents()
-        {
-            var NonRegisteredStudents = studentMgmt.GetNonBiometricStudents(_userinfo.token);
-            if (NonRegisteredStudents.Count > 0)
-            {
-                sqlStudentServices.SaveNonRegisteredStudents(NonRegisteredStudents);
-            }
-        }
-        private void GetNonRegisteredEmployees()
-        {
-            var NonRegisteredEmployees = employeeMgmt.GetNonBiometricStudents(_userinfo.token);
-            if (NonRegisteredEmployees.Count > 0)
-            {
-                sqlEmployeeServices.SaveNonRegisteredEmployees(NonRegisteredEmployees);
-            }
-        }
+        
         private void btnRegister_Click(object sender, EventArgs e)
         {
             RegisterScreen frmMainScreen = new RegisterScreen();
@@ -121,11 +106,16 @@ namespace CampusPortalBiometric
 
         private void MenuScreen_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             sqlStudentServices = new SQLStudentServices();
             sqlEmployeeServices = new SQLEmployeeServices();
             studentMgmt = new StudentMgmt();
             employeeMgmt = new EmployeeMgmt();
             tbSchoolName.Text = _userinfo.SchoolName;
+            pictureBox1.Load(URLManager.GetImageURL(_userinfo.SchoolLogo));
+            GetStudents();
+            GetEmployees();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

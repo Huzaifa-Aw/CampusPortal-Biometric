@@ -35,6 +35,8 @@ namespace CampusPortalBiometric
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnUpdateDB = new System.Windows.Forms.Button();
             this.tbSchoolName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAttendance
@@ -46,7 +48,7 @@ namespace CampusPortalBiometric
             this.btnAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.btnAttendance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAttendance.Location = new System.Drawing.Point(301, 170);
+            this.btnAttendance.Location = new System.Drawing.Point(301, 223);
             this.btnAttendance.Name = "btnAttendance";
             this.btnAttendance.Size = new System.Drawing.Size(380, 74);
             this.btnAttendance.TabIndex = 0;
@@ -63,7 +65,7 @@ namespace CampusPortalBiometric
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.btnRegister.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRegister.Location = new System.Drawing.Point(301, 273);
+            this.btnRegister.Location = new System.Drawing.Point(301, 326);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(380, 74);
             this.btnRegister.TabIndex = 1;
@@ -80,7 +82,7 @@ namespace CampusPortalBiometric
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.Location = new System.Drawing.Point(301, 371);
+            this.btnUpdate.Location = new System.Drawing.Point(301, 424);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(380, 74);
             this.btnUpdate.TabIndex = 2;
@@ -97,7 +99,7 @@ namespace CampusPortalBiometric
             this.btnUpdateDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.btnUpdateDB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdateDB.Location = new System.Drawing.Point(301, 470);
+            this.btnUpdateDB.Location = new System.Drawing.Point(301, 523);
             this.btnUpdateDB.Name = "btnUpdateDB";
             this.btnUpdateDB.Size = new System.Drawing.Size(380, 74);
             this.btnUpdateDB.TabIndex = 3;
@@ -107,21 +109,33 @@ namespace CampusPortalBiometric
             // 
             // tbSchoolName
             // 
-            this.tbSchoolName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbSchoolName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSchoolName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.tbSchoolName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
             this.tbSchoolName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbSchoolName.Location = new System.Drawing.Point(183, 24);
+            this.tbSchoolName.Location = new System.Drawing.Point(188, 137);
             this.tbSchoolName.Name = "tbSchoolName";
-            this.tbSchoolName.Size = new System.Drawing.Size(629, 84);
+            this.tbSchoolName.Size = new System.Drawing.Size(610, 64);
             this.tbSchoolName.TabIndex = 4;
             this.tbSchoolName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Location = new System.Drawing.Point(434, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // MenuScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.ClientSize = new System.Drawing.Size(986, 624);
+            this.ClientSize = new System.Drawing.Size(986, 607);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbSchoolName);
             this.Controls.Add(this.btnUpdateDB);
             this.Controls.Add(this.btnUpdate);
@@ -133,6 +147,7 @@ namespace CampusPortalBiometric
             this.Text = "Main Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuScreen_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -144,5 +159,6 @@ namespace CampusPortalBiometric
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnUpdateDB;
         private System.Windows.Forms.Label tbSchoolName;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
